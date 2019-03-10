@@ -5,7 +5,6 @@
     - [One To One](#one-to-one)
     - [One To Many](#one-to-many)
     - [One To Many (Inverse)](#one-to-many-inverse)
-    - [Many To Many](#many-to-many)
     - [Defining Custom Intermediate Table Models](#defining-custom-intermediate-table-models)
     - [Has One Through](#has-one-through)
     - [Has Many Through](#has-many-through)
@@ -931,7 +930,7 @@ You may also alias the relationship count result, allowing multiple counts on th
 
 If you're combining `withCount` with a `select` statement, ensure that you call `withCount` after the `select` method:
 
-    $query = App\Post::select(['title', 'body'])->withCount('comments');
+    $posts = App\Post::select(['title', 'body'])->withCount('comments');
 
     echo $posts[0]->title;
     echo $posts[0]->body;
